@@ -7,7 +7,7 @@ Assumptions:
 
 Tests:  
 cart_spec - adds the first soda to the cart, got to the cart, delete that soda  
-search_spec - look for Whoopers, thare are none in Provo (That may be different somwhere else), then look for a Milky Way, which is found  
+search_spec - look for Whoopers, there are none in Provo (That may be different somwhere else), then look for a Milky Way, which is found  
 
 5. `bundle install`
 6. `rspec cart_spec.rb`
