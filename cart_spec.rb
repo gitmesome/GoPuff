@@ -37,6 +37,7 @@ describe "GoPuff Cart Test" do
     expect(bag_count.text).to eq("1")
     my_bag.click
 
+    sleep(2) # allow bag to load
     product_span = @browser.span(xpath: '//*[@id="vueroot"]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/span')
     expect(product_span.text).to eq("1 product")
 
