@@ -28,7 +28,7 @@ describe "GoPuff Search Test" do
     sleep(2)
     #search_form.submit
     result = @browser.div(xpath: '/html/body/div[1]/div[1]/div[2]/div/div/div[2]/div/div[2]/div[1]/div')
-    result.text.should eq("No results for 'whoppers'\nTry searching something else")
+    expect(result.text).to eq("No results for 'whoppers'\nTry searching something else")
 
     @browser.goto 'gopuff.com/#search'
     search_input = @browser.text_field(xpath: '//*[@id="product-search"]')

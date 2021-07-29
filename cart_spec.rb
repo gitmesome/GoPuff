@@ -23,22 +23,22 @@ describe "GoPuff Cart Test" do
     @browser.goto 'gopuff.com/drinks'
 
     soda_link = @browser.link(href: '/drinks/soda')
-    soda_link.text.should eq("Soda")
+    expect(soda_link.text).to eq("Soda")
     soda_link.click
 
     dew_div = @browser.div(xpath: '/html/body/div[1]/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/a[1]/div[3]/div[3]')
-    dew_div.text.should eq("Add")
+    expect(dew_div.text).to eq("Add")
     dew_div.click
 
     my_bag = @browser.button(xpath: '//*[@id="vueroot"]/div[1]/div[1]/div[1]/div[1]/div[3]/div/button')
-    my_bag.text.should eq("My Bag")
+    expect(my_bag.text).to eq("My Bag")
 
     bag_count = @browser.div(xpath: '//*[@id="vueroot"]/div[1]/div[1]/div[1]/div[1]/div[3]/div/div')
-    bag_count.text.should eq("1")
+    expect(bag_count.text).to eq("1")
     my_bag.click
 
     product_span = @browser.span(xpath: '//*[@id="vueroot"]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/span')
-    product_span.text.should eq("1 product")
+    expect(product_span.text).to eq("1 product")
 
     details_span = @browser.span(xpath: '//*[@id="vueroot"]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div[2]/div[1]/span[2]')
     details_span.click
@@ -48,6 +48,6 @@ describe "GoPuff Cart Test" do
 
     sleep(5)
     empty_bag = @browser.div(xpath: '//*[@id="vueroot"]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[1]')
-    empty_bag.text.should eq("Your Bag is Empty")
+    expect(empty_bag.text).to eq("Your Bag is Empty")
   end
 end
